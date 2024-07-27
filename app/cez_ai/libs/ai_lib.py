@@ -1,4 +1,4 @@
-from libs import position_lib
+from app.cez_ai.libs import position_lib
 import math
 import random
 

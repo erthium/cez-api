@@ -1,3 +1,5 @@
+REQUIREMENTS_FILE := 'requirements.txt'
+
 .PHONY: init freeze dev start
 
 init:
