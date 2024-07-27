@@ -7,8 +7,8 @@ import random
 
 router = APIRouter()
 
-@router.get("/calculate")
-async def calculate(fen: str = ''):
+@router.post("/calculate")
+async def calculate(fen: str = '', depth: int = 3):
   print(f'Collected fen notation: {fen}')
   game = game_lib.Game()
 
@@ -18,9 +18,10 @@ async def calculate(fen: str = ''):
     print(f"could not load fen")
     return
 
-  ai = ai_lib.AI(5)
+  depth = min(1, max(7, depth))
+  ai = ai_lib.AI(depth)
   
-  print("Calculating...")
+  print(f"Calculating with depth {depth}...")
 
   best_lines, best_score = ai.calculate_best_move(game.board)
   move = random.choice(best_lines)[-1]
