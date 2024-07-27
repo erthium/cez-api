@@ -6,4 +6,3 @@ router = APIRouter()
 @router.get("/calculate")
 async def calculate():
   return
-
