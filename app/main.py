@@ -6,14 +6,9 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 
 from app.api.v1.endpoints import cez
-from app.core.config import settings
+#from app.core.config import settings
 
-
-app = FastAPI(
-  title=settings.PROJECT_NAME,
-  description=settings.DESCRIPTION,
-  version=settings.VERSION,
-)
+app = FastAPI()
 
 app.include_router(cez.router, prefix="/api/v1/cez")
 
