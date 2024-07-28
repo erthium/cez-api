@@ -16,6 +16,7 @@ origins = [
   "http://localhost",
   "http://localhost:8000",
   "http://localhost:5000",
+  "https://ituai.club"
 ]
 
 app.add_middleware(
