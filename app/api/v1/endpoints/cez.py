@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Request
 from typing import List
 
 from app.cez_ai.libs import game_lib, board_lib, ai_lib
@@ -8,8 +8,12 @@ import random
 router = APIRouter()
 
 @router.post("/calculate")
-async def calculate(fen: str = '', depth: int = 3):
-  print(f'Collected fen notation: {fen}')
+async def calculate(request: Request):
+  data = await request.json()
+  fen = data.get("fen")
+  depth = data.get("depth")
+  if not depth:
+    depth = 4
   game = game_lib.Game()
 
   try:

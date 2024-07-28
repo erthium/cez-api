@@ -15,6 +15,7 @@ app.include_router(cez.router, prefix="/api/v1/cez")
 origins = [
   "http://localhost",
   "http://localhost:8000",
+  "http://localhost:5000",
 ]
 
 app.add_middleware(
