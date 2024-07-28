@@ -22,7 +22,7 @@ async def calculate(request: Request):
     print(f"could not load fen")
     return
 
-  depth = min(1, max(7, depth))
+  depth = max(1, min(6, depth))
   ai = ai_lib.AI(depth)
   
   print(f"Calculating with depth {depth}...")
