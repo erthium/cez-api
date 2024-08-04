@@ -4,7 +4,7 @@ RestAPI with Python's FastAPI, for the Cez game in `ituai.club/cez`.
 
 ## License
 
-This project is licensed under the [GNU GPL-3.0](https://github.com/ErtyumPX/hashiwokakero/blob/main/LICENSE) license.
+This project is licensed under the [GNU GPL-3.0](https://github.com/erthium/cez-api/blob/main/LICENSE) license.
 
 Although everything is free to use, modify and distribute, credit is always appreciated.
 
