@@ -1,4 +1,4 @@
-from app.cez_ai.libs import board_lib, position_lib, ai_lib
+from app.libs import board_lib, position_lib, ai_lib
 import os
 
 WHITE_COLOR = 255, 200, 120

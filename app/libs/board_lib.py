@@ -1,4 +1,4 @@
-from app.cez_ai.libs import move_lib, position_lib, piece_lib
+from app.libs import move_lib, position_lib, piece_lib
 
 
 class FENError(Exception):

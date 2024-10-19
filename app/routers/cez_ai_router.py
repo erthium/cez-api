@@ -1,17 +1,20 @@
-from fastapi import APIRouter, HTTPException, Request
+from fastapi import APIRouter
 from typing import List
 
 from app.libs import game_lib, board_lib, ai_lib
-
+from app.objects import CalculateRequest, CalculateResponse
 import random
 
 router = APIRouter()
 
-@router.post("/calculate")
-async def calculate(request: Request):
-  data = await request.json()
-  fen = data.get("fen")
-  depth = data.get("depth")
+@router.post(
+  "/calculate",
+  response_model=CalculateResponse,
+  summary="Calculate the best move for a given board state",
+  response_description="The best move for the given board state",
+)
+async def calculate(calculateRequest: CalculateRequest) -> CalculateResponse:
+  fen, depth = calculateRequest.fen, calculateRequest.depth
   if not depth:
     depth = 4
   game = game_lib.Game()
@@ -44,6 +47,4 @@ async def calculate(request: Request):
   print(f"Length: {length}")
 
   print(f"Gonna play {move}")
-  
   return move
-

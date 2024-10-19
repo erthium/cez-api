@@ -5,12 +5,12 @@ from pydantic import BaseModel
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 
-from app.routers import cez_ai
+from app.routers import cez_ai_router
 #from app.core.config import settings
 
 app = FastAPI()
 
-app.include_router(cez_ai.router, prefix="/api/cez/ai")
+app.include_router(cez_ai_router.router, prefix="/api/cez/ai")
 
 origins = [
   "http://localhost",

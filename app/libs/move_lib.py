@@ -1,4 +1,4 @@
-from app.cez_ai.libs import position_lib
+from app.libs import position_lib
 import re
 
 
