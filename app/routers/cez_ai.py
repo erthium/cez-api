@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Request
 from typing import List
 
-from app.cez_ai.libs import game_lib, board_lib, ai_lib
+from app.libs import game_lib, board_lib, ai_lib
 
 import random
 
